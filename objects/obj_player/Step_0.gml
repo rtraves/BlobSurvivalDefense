@@ -40,7 +40,7 @@ function level_up() {
 
     trigger_level_up_menu();
 }
-// Check if enough time has passed since the last shot
+
 if (attack_timer >= attack_speed) {
     // Reset the timer
     attack_timer = 0;
