@@ -6,8 +6,8 @@ if (is_undefined(attack_timer)) {
     attack_timer = 0;
 }
 if (regen > 0) {
-	if (hitpoints <= max_hitpoints) {
-	hitpoints += regen;
+	if (hitpoints < max_hitpoints - regen) {
+		hitpoints += regen;
 	}
 }
 
