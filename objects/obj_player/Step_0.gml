@@ -6,8 +6,8 @@ if (is_undefined(attack_timer)) {
     attack_timer = 0;
 }
 if (regen > 0) {
-	if (hitpoints <= max_hitpoints) {
-	hitpoints += regen;
+	if (hitpoints < max_hitpoints - regen) {
+		hitpoints += regen;
 	}
 }
 
@@ -40,7 +40,7 @@ function level_up() {
 
     trigger_level_up_menu();
 }
-// Check if enough time has passed since the last shot
+
 if (attack_timer >= attack_speed) {
     // Reset the timer
     attack_timer = 0;
@@ -91,17 +91,13 @@ function trigger_level_up_menu() {
 
 function pick_random_upgrades() {
     var picked_upgrades = [];
-    var temp_upgrades = [];
-	var _len = array_length(all_upgrades);
+    var temp_upgrades = all_upgrades; 
 
-	array_copy(temp_upgrades, 0, all_upgrades, 0, _len)
 
     for (var i = 0; i < 3; i++) {
         if (array_length_1d(temp_upgrades) > 0) {
             var index = irandom(array_length_1d(temp_upgrades) - 1);
-
             picked_upgrades[i] = temp_upgrades[index];
-			array_delete(temp_upgrades, index, 1);
         }
     }
 
