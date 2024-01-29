@@ -91,13 +91,15 @@ function trigger_level_up_menu() {
 
 function pick_random_upgrades() {
     var picked_upgrades = [];
-    var temp_upgrades = all_upgrades; 
-
+    var temp_upgrades = [];
+	var _len = array_length(all_upgrades);
+	array_copy(temp_upgrades, 0, all_upgrades, 0, _len)
 
     for (var i = 0; i < 3; i++) {
         if (array_length_1d(temp_upgrades) > 0) {
             var index = irandom(array_length_1d(temp_upgrades) - 1);
             picked_upgrades[i] = temp_upgrades[index];
+			array_delete(temp_upgrades, index, 1);
         }
     }
 
