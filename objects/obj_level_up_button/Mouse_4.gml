@@ -24,7 +24,7 @@ switch (button_text) {
 		obj_player.aura_damage += 2;
 		break;
 	case "+100 Range":
-		obj_player.range += 100;
+		obj_player.range += 50;
 		break;
 }
 
