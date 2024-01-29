@@ -21,9 +21,9 @@ switch (button_text) {
 		obj_player.regen += 2;
 		break;
 	case "+2 Aura Damage per second":
-		obj_player.aura_damage += 2;
+		obj_player.aura_damage += 20;
 		break;
-	case "+100 Range":
+	case "+50 Range":
 		obj_player.range += 50;
 		break;
 }

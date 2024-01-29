@@ -1,7 +1,9 @@
-// obj_enemy Step Event
 
-
-// Move towards the tower using potential step
-var _speed = .2; // Adjust the speed as needed
+var _speed = .2;
 mp_potential_step(obj_player.x, obj_player.y, _speed, true);
 
+if hitpoints <= 0 {
+	obj_player.experience += exp_gain;
+	instance_destroy();
+	effect_create_above(ef_explosion, x, y, 1, c_white);
+}

@@ -16,7 +16,7 @@ aura_timer -= 1;
 if (aura_timer <= 0) {
     // Reset the timer
     aura_timer = aura_interval;
-
+	show_debug_message("aura tick");
     // Check for and damage enemies within range
     with (obj_enemy) {
         var distance_to_tower = point_distance(x, y, obj_player.x, obj_player.y);
@@ -71,6 +71,8 @@ if (attack_timer >= attack_speed) {
     }
 }
 
+
+
 function trigger_level_up_menu() {
     global.gamePaused = true;
     instance_deactivate_all(true);
@@ -101,3 +103,4 @@ function pick_random_upgrades() {
 
     return picked_upgrades;
 }
+
