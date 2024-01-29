@@ -6,8 +6,8 @@ if (is_undefined(attack_timer)) {
     attack_timer = 0;
 }
 if (regen > 0) {
-	if (hitpoints < max_hitpoints - regen) {
-		hitpoints += regen;
+	if (hitpoints <= max_hitpoints) {
+	hitpoints += regen;
 	}
 }
 
@@ -40,7 +40,7 @@ function level_up() {
 
     trigger_level_up_menu();
 }
-
+// Check if enough time has passed since the last shot
 if (attack_timer >= attack_speed) {
     // Reset the timer
     attack_timer = 0;
