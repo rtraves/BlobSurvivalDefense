@@ -14,14 +14,12 @@ if (regen > 0) {
 aura_timer -= 1;
 
 if (aura_timer <= 0) {
-    // Reset the timer
     aura_timer = aura_interval;
-	show_debug_message("aura tick");
-    // Check for and damage enemies within range
     with (obj_enemy) {
         var distance_to_tower = point_distance(x, y, obj_player.x, obj_player.y);
         if (distance_to_tower <= obj_player.aura_range) {
-            hitpoints -= obj_player.aura_damage;
+			hitpoints -= obj_player.aura_damage;
+			show_debug_message("Enemy hit. HP left: " + string(hitpoints));
         }
     }
 }

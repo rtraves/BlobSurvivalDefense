@@ -1,5 +1,5 @@
 // obj_enemy Step Event
-
+event_inherited()
 //
 // Move towards the tower using potential step
 var _speed = .01; // Adjust the speed as needed
