@@ -4,4 +4,4 @@ speed = .5;
 hitpoints = 125;
 spawn_timer = 1200; // 10 seconds at 60 fps
 damage = 100;
-exp_gain = 30;
+exp_gain = 50;

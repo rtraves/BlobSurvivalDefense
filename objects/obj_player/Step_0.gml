@@ -19,7 +19,6 @@ if (aura_timer <= 0) {
         var distance_to_tower = point_distance(x, y, obj_player.x, obj_player.y);
         if (distance_to_tower <= obj_player.aura_range) {
 			hitpoints -= obj_player.aura_damage;
-			show_debug_message("Enemy hit. HP left: " + string(hitpoints));
         }
     }
 }
