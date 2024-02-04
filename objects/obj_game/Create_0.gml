@@ -3,4 +3,5 @@
 points = 0
 game_time = 0;
 global.game_paused = false;
+global.gamePaused = false;
 

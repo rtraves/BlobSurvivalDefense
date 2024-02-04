@@ -16,7 +16,19 @@ range = 300;
 aura_damage = 0;
 aura_range = 200;
 aura_interval = room_speed * 2;
-aura_timer = aura_interval; 
+aura_timer = aura_interval;
+
+// Saw blade
+saw_blades_upgrade = false;
+saw_blade_active = false;
+saw_blades = 2;
+saw_speed = 1;
+saw_damage = 20;
+saw_cooldown = 2;
+saw_activation_duration = 5;
+saw_timer = 0;
+saw_blade_range = 200;
+
 
 all_upgrades = [
     {name: "Attack Speed", description: "+1 Basic Attack Speed"},
@@ -26,5 +38,6 @@ all_upgrades = [
     {name: "Regen", description: "+2 regen per second"},
     {name: "Spike Damage", description: "+5 Reflect Damage"},
     {name: "Aura", description: "+2 Aura Damage per second"},
+	{name: "Saw Blades", description: "Saw Blades"},
 ];
 

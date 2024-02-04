@@ -70,6 +70,42 @@ if (attack_timer >= attack_speed) {
 }
 
 
+// Saw blades
+if (saw_blades_upgrade && !global.gamePaused) {
+	saw_timer += 1 / room_speed;
+	
+	if (!saw_blade_active && saw_timer >= saw_cooldown) {
+		// Activate saw blades
+	    saw_blade_active = true;
+	    for (var i = 0; i < saw_blades; i++) {
+	        var angle = i * 360 / saw_blades;
+	        var angle_rad = degtorad(angle); // Convert angle to radians
+	        var blade_x = x + saw_blade_range * cos(angle_rad);
+	        var blade_y = y + saw_blade_range * sin(angle_rad);
+
+	        var _saw_blade = instance_create_layer(blade_x, blade_y, "Instances", obj_saw_blade);
+			show_debug_message("spawning");
+
+	        _saw_blade.speed = saw_speed;
+	        _saw_blade.damage = saw_damage;
+	        _saw_blade._angle = angle;
+	    }
+	    saw_timer = 0;
+	} 
+	else if (saw_blade_active && saw_timer >= saw_activation_duration) {
+	    // Deactivate the saw blades reset timer
+	    saw_blade_active = false;
+
+		with (obj_saw_blade) {
+			instance_destroy();
+		}
+		
+	    saw_timer = 0;
+	}
+	
+}
+
+
 
 function trigger_level_up_menu() {
     global.gamePaused = true;

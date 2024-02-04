@@ -26,6 +26,14 @@ switch (button_text) {
 	case "+50 Range":
 		obj_player.range += 50;
 		break;
+	case "Saw Blades":
+		if (obj_player.saw_blades_upgrade == true) {
+			obj_player.saw_blades += 1;
+		}
+		else {
+			obj_player.saw_blades_upgrade = true;
+		}
+		break;
 }
 
 global.gamePaused = false;
