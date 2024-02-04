@@ -3,7 +3,7 @@ event_inherited();
 
 switch (button_text) {
     case "+1 Basic Attack Speed":
-        obj_player.attack_speed = max(0.05, obj_player.attack_speed - 0.05);
+        obj_player.attack_speed = max(0.1, obj_player.attack_speed - 0.1);
 		show_debug_message(string(obj_player.attack_speed));
         break;
     case "+5 Damage":
@@ -33,6 +33,9 @@ switch (button_text) {
 		else {
 			obj_player.saw_blades_upgrade = true;
 		}
+		break;
+	case "Increase armor by 5":
+		obj_player.armor += 5;
 		break;
 }
 

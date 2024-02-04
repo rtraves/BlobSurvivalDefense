@@ -6,6 +6,7 @@ if (instance_exists(obj_player)) {
 	draw_text(obj_player_stats.x,70, "Range: " + string(obj_player.range));
 	draw_text(obj_player_stats.x,90, "Reflect Dmg: " + string(obj_player.reflect_damage));
 	draw_text(obj_player_stats.x,110, "Aura Dmg: " + string(obj_player.aura_damage));
+	draw_text(obj_player_stats.x,130, "Armor: " + string(obj_player.armor));
 }
 
 
